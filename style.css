@@ -1,0 +1,151 @@
+:root {
+  --clr-soft-blue: hsl(215, 51%, 70%);
+  --clr-cyan: hsl(178, 100%, 50%);
+  --clr-dark-blue-main-bg: hsl(217, 54%, 11%);
+  --clr-dark-blue-card-bg: hsl(216, 50%, 16%);
+  --clr-dark-blue-line: hsl(215, 32%, 27%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--clr-dark-blue-main-bg);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+}
+
+.card {
+  max-width: 360px;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background-color: var(--clr-dark-blue-card-bg);
+}
+
+.overlay {
+  position: relative;
+  max-height: 320px;
+  margin-bottom: 1rem;
+}
+
+.card__img {
+  width: 100%;
+  border-radius: 1.25rem;
+}
+
+.overlay--hidden {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-cyan);
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay:hover .overlay--hidden {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.card__title {
+  color: var(--clr-white);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.card__title:hover {
+  color: var(--clr-cyan);
+  cursor: pointer;
+}
+
+.card__description {
+  color: var(--clr-soft-blue);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.card__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--clr-dark-blue-line);
+}
+
+.currency,
+.expiration {
+  display: flex;
+  align-items: center;
+}
+
+.currency__value {
+  color: var(--clr-cyan);
+  margin-left: 0.5rem;
+  font-weight: 600;
+}
+
+.expiration__days {
+  color: var(--clr-soft-blue);
+  margin-left: 0.5rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.author__img {
+  outline: 1px solid var(--clr-white);
+  border-radius: 50%;
+}
+
+.author__text {
+  margin-left: 1rem;
+  color: var(--clr-soft-blue);
+  font-size: 1rem;
+}
+
+.author__text--white {
+  color: var(--clr-white);
+}
+
+.author__text--white:hover {
+  color: var(--clr-cyan);
+  cursor: pointer;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 476px) {
+  main {
+    margin: 1.25rem;
+  }
+}
